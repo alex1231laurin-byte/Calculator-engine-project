@@ -47,8 +47,8 @@ public class CalcEngine
      */
     public void plus()
     {
-        previousOperator = '+';
         applyPreviousOperator();
+        previousOperator = '+';
         displayValue = 0;
     }
 
@@ -57,8 +57,8 @@ public class CalcEngine
      */
     public void minus()
     {
-        previousOperator = '-';
         applyPreviousOperator();
+        previousOperator = '-';
         displayValue = 0;
     }
     
@@ -82,6 +82,7 @@ public class CalcEngine
     public void clear()
     {
         displayValue = 0;
+        previousOperator = '+';
     }
 
     /**
@@ -117,8 +118,11 @@ public class CalcEngine
      */
     private void applyPreviousOperator()
     {
-        if(previousOperator == '+' || previousOperator == '-') {
+        if(previousOperator == '+') {
             leftOperand += displayValue;
+        }
+        else if(previousOperator == '-') {
+            leftOperand -= displayValue;
         }
         else {
             // There was no preceding operator.

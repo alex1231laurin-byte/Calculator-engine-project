@@ -62,4 +62,14 @@ public class CalcEngineTester
         // Return the result, which should be 5.
         return engine.getDisplayValue();
     }
+    public int sequenceTest(){
+        engine.clear();
+        engine.numberPressed(9);
+        engine.plus();
+        engine.numberPressed(1);
+        engine.minus();
+        engine.numberPressed(4);
+        engine.equals();
+        return engine.getDisplayValue();
+    }
 }
