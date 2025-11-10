@@ -47,18 +47,18 @@ public class CalcEngine
      */
     public void plus()
     {
-        applyPreviousOperator();
         previousOperator = '+';
+        applyPreviousOperator();
         displayValue = 0;
     }
 
     /**
-     * This method should be called when the '-' button was pressed.
+    * This method should be called when the '-' button was pressed.
      */
     public void minus()
     {
-        applyPreviousOperator();
         previousOperator = '-';
+        applyPreviousOperator();
         displayValue = 0;
     }
     
@@ -117,11 +117,8 @@ public class CalcEngine
      */
     private void applyPreviousOperator()
     {
-        if(previousOperator == '+') {
+        if(previousOperator == '+' || previousOperator == '-') {
             leftOperand += displayValue;
-        }
-        else if(previousOperator == '-') {
-            leftOperand -= displayValue;
         }
         else {
             // There was no preceding operator.
